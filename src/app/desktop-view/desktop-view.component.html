@@ -1,0 +1,36 @@
+<html>
+
+<body>
+<form>
+	<div class="container-fluid" id="deskview">
+		<div class="col-md-4 col-xl-3 chat">
+			<!--Desktop-->
+			<div class="row chatlist">
+				<div class="card-header card_head" style="border: 1px solid #ddd; bottom: 0px;"> <img src="assets/prof.png" class="rounded-circle home_icon_img "><span class="home_online_icon"></span> <span class="glyphicon glyphicon-menu-down"></span>
+					<div class="input-group"></div>
+				</div>
+				<div class="card mb-sm-3 mb-md-0 contacts_card div_wrap" >
+					<div class="card-body contacts_body">
+						<div class="input-group search-input"> <i class="fas fa-search icon"></i>
+							<input type="text" [(ngModel)]="searchToken" placeholder="search message" name="searchToken" class="form-control search"> </div>
+						<ul class="contacts" >
+						   <li class="active" id="sidebar-user-box"   [attr.data-id]="user.id"  class="100" *ngFor="let user of users | search: searchToken">
+								<div class="d-flex bd-highlight">
+									<div class="img_cont"><img src="assets/prof.png" class="rounded-circle user_img "><span class="online_icon"></span></div>
+									<div class="user_info"   style="display: inline-block"><span>{{ user.firstName }}</span></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="card-footer"></div>
+				</div>
+			</div>
+			<!--Desktop-->
+		</div>
+	</div>
+</form>
+</body>
+<div id="chat"></div>
+</html>
+<img alt ="butterfly" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fbutterfly.html&psig=AOvVaw0QTyWTPYDoz4gLHFNsK4ow&ust=1675443706026000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKDq_6io9_wCFQAAAAAdAAAAABAE">
+<!-- (click)="showDiv(user)" -->

@@ -1,0 +1,436 @@
+.container-fluid{
+    margin-top: 10px;
+}
+.search-input{
+    padding: 0px 7px 0px 7px !important;
+} 
+
+.glyphicon {
+    line-height: 3;
+    float: right;
+    font-size: 2em;
+}
+.input-icons i {
+    position: absolute;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+.icon {
+    padding: 10px;
+    color: #212529;
+    /* min-width: 50px; */
+    text-align: center;
+    background-color: #eef3f8;
+}
+
+
+.chat{
+    height: 0px;
+}
+@media (min-width: 768px){
+     .col-md-9 {
+        flex: 0 0 auto;
+        width: 30.666667%;
+    } 
+    .col-md-12 {
+        flex: 0 0 auto;
+        width: 30.666667%;
+    } 
+}
+.card{
+    height: 462px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+.contacts_body{
+    padding:  0.75rem 0 !important;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+.msg_card_body{
+    overflow-y: auto;
+}
+.card-header{
+    background-color: #ffffff;
+    border-radius: 8px 8px 0 0 !important;
+    height: 63px;
+}
+.card-footer{
+border-radius: 0 0 15px 15px !important;
+    border-top: 0 !important;
+}
+.container{
+    align-content: center;
+}
+.search{
+    border:0 !important;
+    color:#212529 !important;
+    background-color: #eef3f8 !important
+}
+.search:focus{
+    box-shadow:none !important;
+   outline:0px !important;
+}
+.type_msg{
+    background-color: rgba(253, 253, 253, 0.945) !important;
+    border:0 !important;
+    color:rgb(8, 8, 8) !important;
+    height: 36px !important;
+    overflow-y: auto;
+}
+    .type_msg:focus{
+     box-shadow:none !important;
+   outline:0px !important;
+}
+.attach_btn{
+border-radius: 15px 0 0 15px !important;
+background-color: rgba(0,0,0,0.3) !important;
+    border:0 !important;
+    color: white !important;
+    cursor: pointer;
+}
+.send_btn{
+border-radius: 0 15px 15px 0 !important;
+background-color: rgba(0,0,0,0.3) !important;
+    border:0 !important;
+    color: white !important;
+    cursor: pointer;
+}
+.search_btn{
+    border-radius: 0 15px 15px 0 !important;
+    background-color: rgba(247, 244, 244, 0.993) !important;
+    border:0 !important;
+    color: white !important;
+    cursor: pointer;
+}
+.contacts{
+    list-style: none;
+    padding: 0;
+}
+
+
+.contacts li{
+    width: 100% !important;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;;
+    /* margin-bottom: 15px !important; */
+}
+
+.active{
+    /* background-color: rgba(0,0,0,0.3); */
+    background-color: #f9fafb;
+    border-bottom: 1px solid #cfc9c9;
+}
+
+.user_img{
+    height: 55px;
+    width: 55px;
+    border:1.5px solid #f5f6fa;
+
+}
+.home_icon_img{
+    height: 56px;
+    width: 56px;
+    border:1.5px solid #f5f6fa;
+}
+.user_img_msg{
+    height: 40px;
+    width: 40px;
+    border:1.5px solid #f5f6fa;
+
+}
+.img_cont{
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+.img_cont_msg{
+    height: 40px;
+    width: 40px;
+}
+.online_icon{
+position: absolute;
+height: 15px;
+width:15px;
+background-color: #057642;
+border-radius: 50%;
+top: 3em;
+left: 3.9em;
+border:1.5px solid white;
+}
+.home_online_icon{
+position: absolute;
+height: 15px;
+width:15px;
+background-color: #057642;
+border-radius: 50%;
+top: 3.8em;
+left: 5.9em;
+border:1.5px solid white;
+}
+.offline{
+background-color: #c23616 !important;
+}
+.user_info{
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 15px;
+}
+.user_info span{
+font-size: 20px;
+color: rgb(14, 9, 9);
+}
+.user_info p{
+font-size: 10px;
+color: rgba(10, 8, 8, 0.6);
+font-family: "Times New Roman", Times, serif;
+}
+.video_cam{
+margin-left: 50px;
+margin-top: 5px;
+}
+.video_cam span{
+color: white;
+font-size: 20px;
+cursor: pointer;
+margin-right: 20px;
+}
+.msg_cotainer{
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 10px;
+border-radius: 25px;
+background-color: #82ccdd;
+padding: 10px;
+position: relative;
+}
+.msg_cotainer_send{
+margin-top: auto;
+margin-bottom: auto;
+margin-right: 10px;
+border-radius: 25px;
+background-color: #78e08f;
+padding: 10px;
+position: relative;
+}
+.msg_time{
+position: absolute;
+left: 0;
+bottom: -15px;
+color: rgba(255,255,255,0.5);
+font-size: 10px;
+}
+.msg_time_send{
+position: absolute;
+right:0;
+bottom: -15px;
+color: rgba(255,255,255,0.5);
+font-size: 10px;
+}
+.msg_head{
+position: relative;
+}
+#action_menu_btn{
+position: absolute;
+right: 10px;
+top: 10px;
+color: rgb(8, 8, 8);
+cursor: pointer;
+font-size: 25px;
+}
+.action_menu{
+z-index: 1;
+position: absolute;
+padding: 15px 0;
+background-color: rgba(0,0,0,0.5);
+color: white;
+border-radius: 15px;
+top: 30px;
+right: 15px;
+display: none;
+}
+.action_menu ul{
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.action_menu ul li{
+width: 100%;
+padding: 10px 15px;
+margin-bottom: 5px;
+}
+.action_menu ul li i{
+padding-right: 10px;
+
+}
+.action_menu ul li:hover{
+cursor: pointer;
+background-color: rgba(0,0,0,0.2);
+}
+@media(max-width: 576px){
+.contacts_card{
+margin-bottom: 15px !important;
+}
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eaeaead4;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bbbbc3;
+}
+
+
+ /* new css */
+ :host ::ng-deep htlm, body
+{
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+:host ::ng-deep .clearFix
+{
+    clear:both;
+}
+:host ::ng-deep .panel.panel-chat
+{
+    position: fixed;
+    right:0;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: 2px 8px 0px 8px;
+    bottom: 0px;
+    top: 0px;
+}
+:host ::ng-deep .panel.panel-chat *
+{
+    background: none;
+    border: none;
+}
+:host ::ng-deep .panel.panel-chat .panel-heading
+{
+    background: #4b67a8;
+    border: 1px solid #2e4588;
+    color:#FFF;
+}
+:host ::ng-deep .panel.panel-chat .panel-heading a:nth-of-type(1)
+{
+    text-decoration: none;
+    width: 290px;
+    color:#FFF;
+    font-weight: bold;
+    float:left;
+}
+:host ::ng-deep .panel.panel-chat .panel-heading a:nth-of-type(2)
+{
+    text-decoration: none;
+    max-width: 11px;
+    width: 11px;
+    color:#FFF;
+    float:right;
+}
+:host ::ng-deep .panel.panel-chat .panel-body
+{
+    display: block;
+    padding: 0;
+    margin: 0;
+    /* max-height: 250px; */
+    height: 78vh;
+    border-left: 1px solid #b2b2b2;
+    border-right: 1px solid #b2b2b2;
+    background: #EDEFF4;
+    overflow: auto;
+    width: 100%;
+}
+:host ::ng-deep .panel.panel-chat .panel-body::-webkit-scrollbar {
+     display: none;
+ }
+ :host ::ng-deep .panel.panel-chat .panel-body .messageMe
+{
+    border-bottom:1px dotted #b2b2b2;
+}
+:host ::ng-deep .panel.panel-chat .panel-body .messageMe img
+ {
+     float:left;
+     max-width: 50px;
+     max-height: 50px;
+ }
+ :host ::ng-deep .panel.panel-chat .panel-body .messageMe span
+{
+    display: block;
+    float:left;
+    padding: 5px;
+    background: #FFF;
+    min-height: 50px;
+    max-width: 280px;
+    height: 50px;
+    width: 280px;
+    word-break: break-all;
+}
+:host ::ng-deep .panel.panel-chat .panel-body .messageHer
+{
+    border-bottom:1px dotted #b2b2b2;
+}
+:host ::ng-deep .panel.panel-chat .panel-body .messageHer img
+{
+    float:right;
+    max-width: 50px;
+    max-height: 50px;
+}
+:host ::ng-deep .panel.panel-chat .panel-body .messageHer span
+{
+    display: block;
+    float:right;
+    padding: 5px;
+    background: #FFF;
+    min-height: 50px;
+    max-width: 280px;
+    height: 50px;
+    width: 280px;
+    word-break: break-all;
+}
+:host ::ng-deep .panel.panel-chat .panel-footer
+{
+    padding: 0;
+    margin: 0;
+    border: 1px solid #b2b2b2;
+    max-height: 75px;
+    height: 75px;
+}
+:host ::ng-deep .panel.panel-chat .panel-footer textarea
+{
+    margin-bottom: -5px;
+    resize: none;
+    width: 100%;
+    height: 100%;
+}
+:host ::ng-deep .close-icon{
+    top:-13px !important;
+}
+:host ::ng-deep #chat .send{
+    float: right !important;
+    background-color: #1f1a92 !important;
+    border-radius: 15px 15px 15px 15px !important;
+    padding: 4px 15px !important;
+    position:absolute !important;
+    right: 9px !important;
+    }
+    :host ::ng-deep #chat .glyphicon-arrow-left {
+        margin:0px 5px 0px -11px
+    }
+    

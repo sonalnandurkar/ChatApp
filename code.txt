@@ -1,0 +1,318 @@
+import { Component } from '@angular/core';
+
+import * as $ from 'jquery'
+
+
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  
+  menu: any;
+  hidediv:boolean=true;
+  constructor(){}
+     
+  users= [
+    { firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' },
+    { firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin' },
+    { firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'riya', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+   
+];
+selectedUser:any="";
+
+
+
+onSelect(user:any): void {
+  $('#welcomeDiv').show(200);
+  console.log(user);
+  this.selectedUser = user; 
+}
+
+
+
+//  showDiv(){
+//   // clone.children('.show-tick').attr('id', 'select-' + length);
+//   $(".user").on('click', function () {
+//   $("#TargetElements:first").clone().attr('id', 'select-' + length).insertAfter('#TargetElements')
+//   });
+    
+//   }
+// f.find("#Remove").attr("id", "Remove" + cn)
+// f.find("#Remove" + cn).on("click", function() {
+//   f.css("display", "none")
+// });
+
+
+
+showDiv(){
+ 
+      var count=0
+      // var clones_limit = 5;
+      // var cloned_nbr = $(".clonedInput").length-1; //Exclude Default (first) div 
+      var f = $('#welcomeDiv').clone(); 
+       
+      $('#others').append(f.hide());
+      $(".user").on('click', function () {
+        $('#others').append(f.show());
+      });
+      count++
+      console.log(count,'count');
+      if(count < 5 ){
+         f.find(".remove").on("click", function() {
+             
+             // f.css("display", "none")
+            f.children().remove();
+          
+            
+      });
+      } 
+  }  
+  
+  
+removeDiv(){
+   $("#welcomeDiv").hide();
+}
+
+
+  ngOnInit(){}
+  
+  }
+ 
+
+import { Component } from '@angular/core';
+
+import * as $ from 'jquery'
+
+
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  
+  menu: any;
+  hidediv:boolean=true;
+  constructor(){}
+     
+  users= [
+    { firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' },
+    { firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin' },
+    { firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'riya', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+   
+];
+selectedUser:any="";
+
+
+
+onSelect(user:any): void {
+  $('#welcomeDiv').show(200);
+  console.log(user);
+  this.selectedUser = user; 
+}
+
+
+
+//  showDiv(){
+//   // clone.children('.show-tick').attr('id', 'select-' + length);
+//   $(".user").on('click', function () {
+//   $("#TargetElements:first").clone().attr('id', 'select-' + length).insertAfter('#TargetElements')
+//   });
+    
+//   }
+// f.find("#Remove").attr("id", "Remove" + cn)
+// f.find("#Remove" + cn).on("click", function() {
+//   f.css("display", "none")
+// });
+
+
+
+showDiv(){
+ 
+      var count=0
+      // var clones_limit = 5;
+      // var cloned_nbr = $(".clonedInput").length-1; //Exclude Default (first) div 
+      var f = $('#welcomeDiv').clone(); 
+       
+      $('#others').append(f.hide());
+      $(".user").on('click', function () {
+        $('#others').append(f.show());
+      });
+      count++
+      console.log(count,'count');
+      if(count < 5 ){
+         f.find(".remove").on("click", function() {
+             
+             // f.css("display", "none")
+            f.children().remove();
+          
+            
+      });
+      } 
+  }  
+  
+  
+removeDiv(){
+   $("#welcomeDiv").hide();
+}
+
+
+  ngOnInit(){}
+  
+  }
+ import { Component } from '@angular/core';
+
+import * as $ from 'jquery'
+
+
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  
+  menu: any;
+  hidediv:boolean=true;
+  constructor(){}
+     
+  users= [
+    { firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' },
+    { firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin' },
+    { firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'riya', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+   
+];
+selectedUser:any="";
+
+
+
+onSelect(user:any): void {
+  $('#welcomeDiv').show(200);
+  console.log(user);
+  this.selectedUser = user; 
+}
+
+
+
+//  showDiv(){
+//   // clone.children('.show-tick').attr('id', 'select-' + length);
+//   $(".user").on('click', function () {
+//   $("#TargetElements:first").clone().attr('id', 'select-' + length).insertAfter('#TargetElements')
+//   });
+    
+//   }
+// f.find("#Remove").attr("id", "Remove" + cn)
+// f.find("#Remove" + cn).on("click", function() {
+//   f.css("display", "none")
+// });
+
+
+
+showDiv(){
+ 
+      var count=0
+      // var clones_limit = 5;
+      // var cloned_nbr = $(".clonedInput").length-1; //Exclude Default (first) div 
+      var f = $('#welcomeDiv').clone(); 
+       
+      $('#others').append(f.hide());
+      $(".user").on('click', function () {
+        $('#others').append(f.show());
+      });
+      count++
+      console.log(count,'count');
+      if(count < 5 ){
+         f.find(".remove").on("click", function() {
+             
+             // f.css("display", "none")
+            f.children().remove();
+          
+            
+      });
+      } 
+  }  
+  
+  
+removeDiv(){
+   $("#welcomeDiv").hide();
+}
+
+
+  ngOnInit(){}
+  
+  }
+ 
+
+
+  
+  
+
+
+
+
+ 
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+ 
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+ 
+
+  
+
+
+  
+
+
+
+
+
+

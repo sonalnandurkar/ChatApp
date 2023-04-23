@@ -1,0 +1,391 @@
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery'
+
+@Component({
+  selector: 'app-desktop-view',
+  templateUrl: './desktop-view.component.html',
+  styleUrls: ['./desktop-view.component.css']
+})
+export class DesktopViewComponent implements OnInit {
+
+
+
+  constructor() { }
+
+  users:any= [
+    { firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' },
+    { firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin' },
+    { firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'riya', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'sonal', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'rahul', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+   
+];
+
+public innerWidth: any;
+
+
+  ngOnInit(): void {
+  this.innerWidth = window.innerWidth;
+  if(this.innerWidth > 426){
+    $(document).ready(function(){
+        
+      var arr:any = []; // List of users 
+     
+    $(document).on('click', '.card_head', function() { 
+      $('.div_wrap').slideToggle('slow');
+      return false;
+     });
+      
+    if(innerWidth > 768){ 
+      $(document).on('click', '.msg_head', function() { 
+      var chatbox = $(this).parents().attr("rel") ;
+    
+      $('[rel="'+chatbox+'"] .msg_wrap').slideToggle('slow');
+      return false;
+      
+      });
+    }
+    
+      $(document).on('click', '#close', function() { 
+      var chatbox = $(this).parents().parents().attr("rel");
+      $('[rel="'+chatbox+'"]').remove();
+      arr.splice($.inArray(chatbox, arr), 1);
+      displayChatBox();
+      console.log(arr,"++++++++++++");
+      return false;
+      
+      });
+      
+    
+     var count = 0;
+      $(document).on('click', '#sidebar-user-box', function() {
+     
+      console.log(count);
+      
+      
+      var userID = count;
+      var username = $(this).children().text() ;
+      // var temp : boolean = false;
+      // arr.forEach((item: string) => {
+      //   if(item === username){
+      //     temp = true;
+      //   }
+      // })
+
+    
+
+     if ($.inArray(userID, arr) != -1)
+      {
+          arr.splice($.inArray(userID , arr), 1);
+               
+      }
+    
+      arr.unshift(userID);
+     
+          var chatPopup =  '<div class="msg_box" style="left:330px" rel="'+ userID+'">'+
+        '<div class="msg_head">'+ username +'<div id="close" class="glyphicon glyphicon-remove" name="'+username+'"></div></div>'+
+        '<div class="msg_wrap"> <div class="msg_body"> <div class="msg_push"></div> </div>'+
+        '<div class="msg_footer"><button type="button" class="btn btn-primary btn-xs send">Send</button><textarea class="msg_input" rows="4"></textarea></div></div></div>' ;     
+      
+        $("#chat").append(  chatPopup  );
+         displayChatBox();
+        count++
+      });
+     
+    
+ 
+    function displayChatBox(){ 
+          var i = 330; // start position
+          var j = 260;  //next position
+      
+      $.each( arr, function(index:any,value:any ) {  
+         if(index < 3){ 
+        $('[rel="'+value+'"]').css("left",i);
+        $('[rel="'+value+'"]').show();
+            i = i+j;   
+         } 
+          
+          else{
+        $('[rel="'+value+'"]').remove();
+          }
+        });  
+    }  
+
+     
+    });
+  
+   }
+
+ 
+ }
+}  
+  
+
+  /////////////////////////////////////////////////////////////////////////////////////////////
+  import { isNgTemplate } from '@angular/compiler';
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery'
+
+@Component({
+  selector: 'app-desktop-view',
+  templateUrl: './desktop-view.component.html',
+  styleUrls: ['./desktop-view.component.css']
+})
+export class DesktopViewComponent implements OnInit {
+
+
+
+  constructor() { }
+
+  users:any= [
+    { firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User'  ,id:1},
+    { firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin',id:2  },
+    { firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin', id:3 },
+    { firstName: 'riya', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin', id:4 },
+    { firstName: 'sonal', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' ,id:5},
+    { firstName: 'rahul', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' ,id:6},
+   
+];
+
+public innerWidth: any;
+
+
+  ngOnInit(): void {
+  this.innerWidth = window.innerWidth;
+  if(this.innerWidth > 426){
+    $(document).ready(function(){
+        
+      var arr:any = []; // List of users 
+     
+    // $(document).on('click', '.card_head', function() { 
+    //   $('').slideToggle('slow');
+    //   return false;
+    //  });
+    $('.card_head').on('click',function(){
+      $('.div_wrap').slideToggle();
+      });
+      
+    if(innerWidth > 768){ 
+      $(document).on('click', '.msg_head', function() { 
+      var chatbox = $(this).parents().attr("rel") ;
+    
+      $('[rel="'+chatbox+'"] .msg_wrap').slideToggle('slow');
+      return false;
+      
+      });
+    }
+    
+      $(document).on('click', '#close', function() { 
+      var chatbox = $(this).parents().parents().attr("rel");
+      $('[rel="'+chatbox+'"]').remove();
+      arr.splice($.inArray(chatbox, arr), 1);
+      displayChatBox();
+      console.log(arr,"++++++++++++");
+      return false;
+      
+      });
+      
+    
+     var count = 0;
+      $(document).on('click', '#sidebar-user-box', function() {
+     
+      console.log(count);
+      
+      
+      var userID = count;
+      var username = $(this).children().text() ;
+      var temp : boolean = false;
+      arr.forEach((item:string) => {
+        if(item === username){
+          temp = true;
+        }
+      });
+
+    
+
+     if ($.inArray(userID, arr) != -1)
+      {
+          arr.splice($.inArray(userID , arr), 1);
+               
+      }
+    
+      arr.unshift(userID);
+     if(!temp){
+          var chatPopup =  '<div class="msg_box" style="left:360px" rel="'+ userID+'">'+
+        '<div class="msg_head">'+ username +'<div id="close" class="glyphicon glyphicon-remove" name="'+username+'"></div></div>'+
+        '<div class="msg_wrap"> <div class="msg_body"> <div class="msg_push"></div> </div>'+
+        '<div class="msg_footer"><button type="button" class="btn btn-primary btn-xs send">Send</button><textarea class="msg_input" rows="4"></textarea></div></div></div>' ;     
+      
+        $("#chat").append(  chatPopup  );
+         displayChatBox();
+        count++
+        arr.push(username)
+        }
+      });
+     
+    
+ 
+    function displayChatBox(){ 
+          var i = 360 // start position
+          var j = 260;  //next position
+      
+      $.each( arr, function(index:any,value:any ) {  
+         if(index < 3){ 
+        $('[rel="'+value+'"]').css("left",i);
+        $('[rel="'+value+'"]').show();
+            i = i+j;   
+         } 
+          
+          else{
+        $('[rel="'+value+'"]').remove();
+          }
+        });  
+      }   
+    });
+  
+    
+  }
+
+
+ }
+}  
+  
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+import { isNgTemplate } from '@angular/compiler';
+import { Component, OnInit,Input } from '@angular/core';
+import * as $ from 'jquery'
+
+
+@Component({
+  selector: 'app-desktop-view',
+  templateUrl: './desktop-view.component.html',
+  styleUrls: ['./desktop-view.component.css'],
+})
+export class DesktopViewComponent implements OnInit {
+
+ searchToken = '';
+ public innerWidth: any;
+ arr:any=[];
+ @Input()
+ users:any= [];
+ 
+ constructor() {}
+
+
+ngOnInit(): void {
+  this.innerWidth = window.innerWidth;
+ 
+
+  //For Close the chatbox
+
+
+  $(document).on('click', '#close', function() { 
+  
+    var a= $(this).attr("closeid");
+  
+    var chatbox = $(this).parents().parents().attr("rel");
+  
+      if(a== chatbox)
+      {
+        $('[rel="'+chatbox+'"]').remove();
+       
+      }
+      
+  });
+ 
+  
+
+      
+
+//For minimize the userlist
+  $('.card_head').on('click',function(){
+    $('.div_wrap').slideToggle();
+    });
+  }
+
+
+
+ selectedUser:any="";
+ 
+ //For open the chatbox
+ showDiv(user:any): void {
+     console.log(user);
+     this.selectedUser = user; 
+     
+      if ($.inArray(this.selectedUser.id, this.arr) != -1)
+      {
+          this.arr.splice($.inArray(this.selectedUser.id , this.arr), 1);
+              
+      }
+
+      this.arr.unshift(this.selectedUser.id);
+  
+  
+      var chatPopup =  '<div rel="'+this.selectedUser.id+'" class="msg_box" >'+
+      '<div class="msg_head">'+ this.selectedUser.firstName +'<div id="close" class="glyphicon glyphicon-remove" closeid="'+ this.selectedUser.id+'"></div></div>'+
+      '<div class="msg_wrap"> <div class="msg_body"> <div class="msg_push"></div> </div>'+
+      '<div class="msg_footer"><button type="button" class="btn btn-primary btn-xs send">Send</button><textarea class="msg_input" rows="4"></textarea></div></div></div>' ;     
+    
+       $("#chat").append(  chatPopup  );
+       this.displayChatBox();
+    
+     
+ }
+ 
+  
+
+
+//For display the multiple chatbox
+displayChatBox(){ 
+ 
+  
+    var i = 322; // start position
+    var j = 260;  //next position
+    
+      $.each( this.arr, function(index:any,value:any ) {  
+        console.log(index,value);
+        
+          if(index < 3) { 
+              $('[rel="'+value+'"]').css("right",i);
+              $('[rel="'+value+'"]').show();
+                 i = i+j;   
+          } 
+        
+          else {
+            $('[rel="'+value+'"]').remove();
+          
+            }
+        });  
+
+      
+} 
+
+
+
+
+//For search the user 
+Search() {
+  if (this.searchToken == '') {
+    this.ngOnInit();
+  } else {
+    this.users =
+      this.users.filter((res:any) => {
+        return res.searchToken.toLocaleLowerCase().match(
+          this.searchToken.toLocaleLowerCase()
+        );
+      });
+  }
+}
+
+}  
+  
+
+
+
+//style="right:322px"

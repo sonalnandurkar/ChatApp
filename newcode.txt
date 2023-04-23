@@ -1,0 +1,127 @@
+// $(document).ready(() =>{
+
+  //   var arr:any = [];  
+    
+
+  //   $(document).on('click', '.card_head', function() { 
+
+  //     $('.div_wrap').slideToggle('slow');
+  //     return false;
+  //    });
+
+    
+  //   //  $(document).on('click', '.msg_head', function() { 
+  //   //   var chatbox = $(this).parents().attr("rel") ;
+  //   //   console.log(chatbox,"----------------");
+      
+  //   //   $('[rel="'+chatbox+'"] .msg_wrap').slideToggle('slow');
+  //   //   return false;
+  //   //  });
+
+
+   
+
+  // $(document).on('click', '#close', function() { 
+  //   var chatbox = $(this).parents().parents().attr("rel") ;
+  //   console.log(chatbox);
+    
+  //   $('[rel="'+chatbox+'"]').remove();
+  //   arr.splice($.inArray(chatbox, arr), 1);
+  //   displayChatBox();
+  //   return false;
+  //  });
+     
+  
+ 
+  
+  // // console.log(this.innerWidth);
+  
+  // if(innerWidth > 768 ){
+  //   var count = 0;
+   
+  //    $(document).on('click', '#sidebar-user-box' , () => {  
+         
+  //       var userID = count;
+  //       var username = $(this).parents().text(); ;
+  //       console.log(userID,this.selectedUser);
+        
+  //       if ($.inArray(userID, arr) != -1)
+  //       {
+  //           arr.splice($.inArray(userID, arr), 1);
+  //         }
+        
+  //       arr.unshift(userID);
+      
+        
+  //       var chatPopup;
+        
+     
+  //       chatPopup =  '<div class="msg_box" style="left:347px !important" rel="'+ userID+'">'+
+  //         '<div class="msg_head">'+ username +
+  //         '<div id="close"><span class="glyphicon glyphicon-remove"></span></div></div>'+
+  //         '<div class="msg_wrap"> <div class="msg_body"> <div class="msg_push"></div> </div>'+
+  //         '<div class="msg_footer"><button type="button" class="btn btn-primary btn-xs send">Send</button> <textarea class="msg_input " rows="4"> </textarea></div></div></div>' ;     
+       
+         
+  //         $("#chat").append(  chatPopup  );
+        
+  //       displayChatBox();
+       
+      
+       
+  //      count++;
+  //   });
+  // }
+
+  // else if(innerWidth <= 768) {
+  //   $(document).on('click', '#sidebar-user-box', () => {
+     
+  //       var userID = $(this).attr("class");
+  //       var username = $(this).children().text() ;
+  //       console.log(userID,username);
+        
+  //       if ($.inArray(userID, arr) != -1)
+  //       {
+  //           arr.splice($.inArray(userID, arr), 1);
+  //         }
+        
+  //       arr.unshift(userID);
+       
+  //       var chatPopup;
+  //       chatPopup =  '<div class="msg_box" style="left:347px !important" rel="'+ userID+'">'+
+  //         '<div class="msg_head">'+ username +
+  //         '<div id="close"> <span class="glyphicon glyphicon-remove"></span></div> </div>'+
+  //         '<div class="msg_wrap"> <div class="msg_body"> <div class="msg_push"></div> </div>'+
+  //         '<div class="msg_footer"><textarea class="msg_input" rows="4"></textarea></div>  </div>  </div>' ;     
+        
+          
+  //         $("#chat").append(  chatPopup  );
+      
+
+  //       displayChatBox();
+        
+     
+      
+  //   });
+  // }
+   
+
+
+  //     function displayChatBox(){ 
+  //       var i = 347 ; // start position
+  //       var j = 260;  //next position
+      
+  //     $.each( arr, function( index:any, value: any ) {  
+  //        if(index < 3){
+  //             $('[rel="'+value+'"]').css("left",i);
+  //       $('[rel="'+value+'"]').show();
+  //          i = i+j;    
+  //        }
+  //        else{
+  //       $('[rel="'+value+'"]').remove();
+  //        }
+  //           });  
+  //     }  
+
+  //    });
+    

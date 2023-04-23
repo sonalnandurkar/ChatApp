@@ -1,0 +1,139 @@
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery'
+
+@Component({
+  selector: 'app-desktop-view',
+  templateUrl: './desktop-view.component.html',
+  styleUrls: ['./desktop-view.component.css']
+})
+export class DesktopViewComponent implements OnInit {
+
+
+
+  constructor() { }
+
+  users:any= [
+    { firstName: 'Frank', lastName: 'Murphy', email: 'frank.murphy@test.com', role: 'User' },
+    { firstName: 'Vic', lastName: 'Reynolds', email: 'vic.reynolds@test.com', role: 'Admin' },
+    { firstName: 'Gina', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'riya', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'sonal', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+    { firstName: 'rahul', lastName: 'Jabowski', email: 'gina.jabowski@test.com', role: 'Admin' },
+   
+];
+
+public innerWidth: any;
+
+  ngOnInit(): void {
+  this.innerWidth = window.innerWidth;
+  if(this.innerWidth > 426){
+    $(document).ready(function(){
+        
+      var arr:any = []; // List of users 
+     
+    $(document).on('click', '.card_head', function() { 
+      $('.div_wrap').slideToggle('slow');
+      return false;
+     });
+      
+    if(innerWidth > 768){ 
+      $(document).on('click', '.msg_head', function() { 
+      var chatbox = $(this).parents().attr("rel") ;
+    
+      $('[rel="'+chatbox+'"] .msg_wrap').slideToggle('slow');
+      return false;
+      
+      });
+    }
+    
+      $(document).on('click', '#close', function() { 
+      var chatbox = $(this).parents().parents().attr("rel");
+      var title = $(this).attr("name")
+      console.log(title,"==================");
+      
+      $('[rel="'+chatbox+'"]').remove();
+      // arr.splice($.inArray(chatbox, arr), 1);
+      
+      
+     
+      arr = arr.filter((item : string) => item !== title);
+      displayChatBox();
+      console.log(arr,"++++++++++++");
+      return false;
+      
+      });
+      
+    
+     var count = 0;
+      $(document).on('click', '#sidebar-user-box', function() {
+     
+      console.log(count);
+      
+      
+      var userID = count;
+      //var userID = $(this).attr("class");
+      var username = $(this).children().text() ;
+      var temp : boolean = false;
+      arr.forEach((item: string) => {
+        if(item === username){
+          temp = true;
+        }
+      })
+
+    
+
+    //  if ($.inArray(userID, arr) != -1)
+    //   {
+    //       arr.splice($.inArray(userID , arr), 1);
+               
+    //   }
+    
+      //arr.unshift(userID);
+      var limit: number = 3;
+     if(!temp){
+         count++;
+         if(arr.length < limit){
+           arr.push(username);
+         }
+         else {
+          // arr[0]=arr[1];
+          // arr[1]=arr[2];
+          // arr[2]=username;
+         }
+         arr.map((item : string) => {
+          var chatPopup =  '<div class="msg_box" style="left:300px" rel="'+ userID+'">'+
+        '<div class="msg_head">'+item +'<div id="close" class="glyphicon glyphicon-remove" name="'+username+'"></div></div>'+
+        '<div class="msg_wrap"> <div class="msg_body"> <div class="msg_push"></div> </div>'+
+        '<div class="msg_footer"><button type="button" class="btn btn-primary btn-xs send">Send</button><textarea class="msg_input" rows="4"></textarea></div></div></div>' ;     
+      
+        $("#chat").append(  chatPopup  );
+       
+         }) 
+       displayChatBox();
+         console.log(arr);
+         
+        }
+      });
+    
+ 
+    function displayChatBox(){ 
+          var i = 300 ; // start position
+          var j = 260;  //next position
+      
+      $.each( arr, function(value:any ) {  
+          
+              $('[rel="'+value+'"]').css("left",i);
+        $('[rel="'+value+'"]').show();
+            i = i+j;    
+          
+        //   else{
+        // $('[rel="'+value+'"]').remove();
+        //   }
+            });  
+      }  
+      
+    });
+  
+   }
+ }
+}
