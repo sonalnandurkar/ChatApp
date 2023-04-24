@@ -1,7 +1,5 @@
 # ChatApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+# I developed this application using angular with the same functionality of linkdln and try to provide the same UI.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# I used angular 13 while developing HTML CSS JS and Bootstrap.
